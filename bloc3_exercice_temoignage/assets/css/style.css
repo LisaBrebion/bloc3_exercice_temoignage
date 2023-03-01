@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/* Small Reset */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS */
+:root {
+    --bg-color: #161313;
+    --text-color: #BBB;
+    --card-bg-color: #201E1E;
+    --star-color: #CEC652;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-bottom: 100px;
+}
+
+/* Votre CSS ici */
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10vh 0 15vh;
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 60%;
+    margin: 0 auto;
+}
+
+.card {
+    display: wrap;
+    margin: 25px;
+    align-items: center;
+    padding: 35px;
+    min-height: 50vh;
+    background: var(--card-bg-color);
+    border-radius: 5px;
+    position: relative;
+
+}
+
+#jane,
+#john,
+#paul {
+    height: 130px;
+    width: 130px;
+    background: url(../img/avatar_jane.jpg) center/cover;
+    position: absolute;
+    border-radius: 150px;
+    /* on centre l'élément */
+    left: 33%;
+    transform: translateY(-50%);
+    /* on aligne l'élément tout en haut du footer (top:0) de l'élément parent (card) en position relative  */
+    top: 0
+}
+
+#jane {
+    background: url(../img/avatar_jane.jpg) center/cover;
+}
+
+#john {
+    background: url(../img/avatar_john.jpg) center/cover;
+}
+
+#paul {
+    background: url(../img/avatar_paul.jpg) center/cover;
+}
+
+p {
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 16px;
+    position: relative;
+    margin: 45px 0;
+}
+
+/* on crée l'élément "quot-left" */
+p::before {
+    content: "\f10d";
+    position: absolute;
+    color: rgba(128, 128, 128, 0.187);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 8em;
+    /* transform: translateX(-30%); */
+    right: 75%;
+    transform: translateY(-40%);
+    top: 0;
+}
+
+p::after {
+    content: "\f005 \f005 \f005 \f005 \f005 ";
+    position: absolute;
+    color: var(--star-color);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2em;
+    /* transform: translateY(5%); */
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: #ccc;
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font: 700 0.75rem "Raleway";
+    transition: 0.3s;
+}
+
+/******************* RESPONSIVE *******************/
+@media screen and (max-width: 850px) {
+
+    .container {
+        display: block;
+    }
+
+    .card {
+        min-height: 50vh;
+        margin: 20vh;
+        min-width: 200px;
+    }
+
+    header .img-banner {
+        min-height: 90vh;
+        margin-top: 30px;
+    }
+
+    #jane,
+    #paul,
+    #john {
+        height: 100px;
+        width: 100px;
+    }
+
+    p::before {
+        font-size: 5em;
+    }
+
+    p::after {
+        font-size: 1.5em;
+    }
+}
